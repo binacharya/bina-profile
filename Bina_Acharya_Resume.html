@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Bina Acharya – Resume</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ink:      #0D1B2A;
+  --ink-2:    #152030;
+  --ink-3:    #1C2C3E;
+  --teal:     #00A8A8;
+  --teal-dk:  #007070;
+  --teal-lt:  #E4F6F6;
+  --teal-md:  #B8E4E4;
+  --emerald:  #00B89A;
+  --white:    #FFFFFF;
+  --text:     #2C3E50;
+  --text-lt:  #5A6A7A;
+  --border:   #DCE8EC;
+  --bg-main:  #F7FAFA;
+}
+
+body {
+  background: #CBD5DB;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 36px 16px 52px;
+  min-height: 100vh;
+}
+
+/* ── PAGE ── */
+.page {
+  width: 210mm;
+  min-height: 297mm;
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 12px 60px rgba(0,0,0,0.25), 0 2px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+/* ── HEADER ── */
+.header {
+  background: var(--ink);
+  padding: 26px 30px 22px;
+  position: relative;
+  overflow: hidden;
+}
+/* background radial glow */
+.header::before {
+  content: '';
+  position: absolute;
+  top: -60px; right: -40px;
+  width: 300px; height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,168,168,0.2) 0%, transparent 70%);
+  pointer-events: none;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  bottom: -40px; left: 20%;
+  width: 180px; height: 180px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,184,154,0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+.header-inner { position: relative; z-index: 1; display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; }
+.header-left { flex: 1; }
+.name-row { margin-bottom: 4px; }
+.name-first {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px; font-weight: 700;
+  color: rgba(255,255,255,0.55);
+  letter-spacing: 2px; line-height: 1;
+  text-transform: uppercase;
+}
+.name-last {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px; font-weight: 800;
+  color: var(--white);
+  letter-spacing: -1.5px;
+  line-height: 0.95;
+  display: block;
+}
+.name-last span {
+  background: linear-gradient(135deg, var(--teal), var(--emerald));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.header-title-bar {
+  display: flex; align-items: center; gap: 8px;
+  margin-top: 10px; flex-wrap: wrap;
+}
+.title-pill {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 4px;
+  padding: 3px 10px;
+  font-size: 8.5px; font-weight: 600;
+  color: rgba(255,255,255,0.65);
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+.title-sep { color: rgba(255,255,255,0.2); font-size: 12px; }
+.header-right {
+  display: flex; flex-direction: column; align-items: flex-end;
+  gap: 5px; flex-shrink: 0;
+}
+.contact-item {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 8.5px; color: rgba(255,255,255,0.6);
+  text-decoration: none;
+}
+.contact-item svg { color: var(--teal); flex-shrink: 0; }
+.header-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(0,168,168,0.15);
+  border: 1px solid rgba(0,168,168,0.3);
+  border-radius: 100px; padding: 4px 12px;
+  font-size: 8px; font-weight: 700;
+  color: var(--teal);
+  letter-spacing: 1.5px; text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.badge-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--teal); }
+
+/* ── BODY ── */
+.body {
+  display: grid;
+  grid-template-columns: 186px 1fr;
+  flex: 1;
+}
+
+/* ── SIDEBAR ── */
+.sidebar {
+  background: var(--ink-2);
+  padding: 18px 15px 20px 16px;
+}
+.s-block { margin-bottom: 15px; }
+.s-block:last-child { margin-bottom: 0; }
+.s-head {
+  font-size: 7.5px; font-weight: 700; letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 6px;
+  display: flex; align-items: center; gap: 7px;
+}
+.s-head::after { content: ''; flex: 1; height: 1px; background: rgba(0,168,168,0.25); }
+.s-text {
+  font-size: 8.5px; color: rgba(255,255,255,0.55);
+  line-height: 1.75; text-align: left;
+}
+.s-text strong { color: rgba(255,255,255,0.85); font-weight: 600; }
+
+/* skill chips */
+.skill-chips { display: flex; flex-direction: column; gap: 4px; }
+.skill-chip {
+  display: flex; align-items: center; gap: 7px;
+  font-size: 8.5px; color: rgba(255,255,255,0.65);
+  line-height: 1.4;
+  padding: 4px 8px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 5px;
+}
+.chip-dot {
+  width: 5px; height: 5px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--teal-dk), var(--teal));
+  flex-shrink: 0;
+}
+
+/* edu block */
+.edu-block { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-radius: 7px; padding: 10px 10px; }
+.edu-deg { font-size: 9px; font-weight: 700; color: rgba(255,255,255,0.85); margin-bottom: 3px; line-height: 1.3; }
+.edu-uni { font-size: 8.5px; color: var(--teal); font-weight: 500; margin-bottom: 2px; }
+.edu-loc { font-size: 8px; color: rgba(255,255,255,0.35); display: flex; align-items: center; gap: 4px; }
+
+/* stat strip in sidebar */
+.stat-row { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 0; }
+.s-stat {
+  background: rgba(0,168,168,0.08);
+  border: 1px solid rgba(0,168,168,0.15);
+  border-radius: 7px; padding: 8px 7px; text-align: center;
+}
+.s-stat-num { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--teal); line-height: 1; }
+.s-stat-lbl { font-size: 7px; color: rgba(255,255,255,0.35); margin-top: 2px; }
+
+/* ── MAIN ── */
+.main {
+  background: var(--bg-main);
+  padding: 18px 22px 20px 20px;
+  border-left: 1px solid rgba(0,0,0,0.06);
+}
+.m-section { margin-bottom: 14px; }
+.m-section:last-child { margin-bottom: 0; }
+.m-head {
+  font-size: 7.5px; font-weight: 700; letter-spacing: 2.5px;
+  text-transform: uppercase; color: var(--text);
+  display: flex; align-items: center; gap: 8px;
+  margin-bottom: 10px;
+}
+.m-head::after { content: ''; flex: 1; height: 1.5px; background: linear-gradient(90deg, var(--teal-md), transparent); }
+
+/* job */
+.job { margin-bottom: 11px; }
+.job:last-child { margin-bottom: 0; }
+.job-header-row {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 2px; gap: 8px;
+}
+.job-co {
+  font-size: 10.5px; font-weight: 700; color: var(--ink);
+}
+.job-dates {
+  display: inline-flex; align-items: center; gap: 4px;
+  background: var(--teal-lt); border: 1px solid var(--teal-md);
+  border-radius: 100px; padding: 2px 9px;
+  font-size: 7.5px; font-weight: 600; color: var(--teal-dk);
+  flex-shrink: 0;
+}
+.job-role-row { display: flex; align-items: center; gap: 8px; margin-bottom: 7px; }
+.job-role { font-size: 8.5px; font-style: italic; color: var(--teal-dk); font-weight: 500; }
+.job-loc { font-size: 8px; color: var(--text-lt); display: flex; align-items: center; gap: 3px; }
+.job-badge {
+  font-size: 7px; font-weight: 700; border-radius: 100px; padding: 2px 7px; letter-spacing: 0.5px;
+}
+.job-badge-current { background: #DCFCE7; color: #166534; }
+.job-badge-prev { background: #F1F5F9; color: #64748B; }
+
+/* sub-role */
+.sub-label {
+  font-size: 7.5px; font-weight: 700; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--teal-dk);
+  display: flex; align-items: center; gap: 6px;
+  margin: 7px 0 5px;
+}
+.sub-label::after { content: ''; flex: 1; height: 1px; background: var(--teal-md); }
+
+/* bullets */
+.bullets { list-style: none; }
+.bullets li {
+  display: flex; align-items: flex-start; gap: 7px;
+  font-size: 8.5px; color: var(--text);
+  line-height: 1.65; margin-bottom: 4px;
+  padding: 3px 5px; border-radius: 4px;
+}
+.bullets li:hover { background: rgba(0,168,168,0.04); }
+.b-dot {
+  width: 14px; height: 14px; border-radius: 50%; flex-shrink: 0;
+  background: linear-gradient(135deg, var(--teal-dk), var(--teal));
+  display: flex; align-items: center; justify-content: center;
+  margin-top: 0.5px;
+}
+.b-dot svg { display: block; }
+.bullets li b { color: var(--ink); font-weight: 600; }
+.b-text { flex: 1; }
+
+/* divider */
+.job-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 10px 0;
+}
+
+/* ── PRINT ── */
+@media print {
+  body { background: white; padding: 0; }
+  .page { box-shadow: none; width: 210mm; min-height: 297mm; }
+  @page { size: A4; margin: 0; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-inner">
+      <div class="header-left">
+        <div class="header-badge"><span class="badge-dot"></span> 7+ Years Experience</div>
+        <div class="name-row">
+          <div class="name-first">Bina</div>
+          <span class="name-last">Acharya<span>.</span></span>
+        </div>
+        <div class="header-title-bar">
+          <span class="title-pill">Lead Software Engineer</span>
+          <span class="title-sep">·</span>
+          <span class="title-pill">Quality Analyst</span>
+          <span class="title-sep">·</span>
+          <span class="title-pill">Data &amp; Application QA Specialist</span>
+        </div>
+      </div>
+      <div class="header-right">
+        <a class="contact-item" href="mailto:acharyabina01@gmail.com">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          acharyabina01@gmail.com
+        </a>
+        <a class="contact-item" href="tel:+9779843296039">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.22 1.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.18 6.18l1.56-1.56a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          +977-9843296039
+        </a>
+        <span class="contact-item">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Kathmandu, Nepal
+        </span>
+        <a class="contact-item" href="https://linkedin.com/in/bina-acharya" target="_blank">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          linkedin.com/in/bina-acharya
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="body">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+
+      <!-- Stats -->
+      <div class="s-block">
+        <div class="stat-row">
+          <div class="s-stat">
+            <div class="s-stat-num">7+</div>
+            <div class="s-stat-lbl">Years Exp.</div>
+          </div>
+          <div class="s-stat">
+            <div class="s-stat-num">30+</div>
+            <div class="s-stat-lbl">Clients</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Profile Summary -->
+      <div class="s-block">
+        <div class="s-head">Profile</div>
+        <p class="s-text">Quality Analyst with <strong>7+ years</strong> across retail and financial services. Expert in data quality assurance, ETL validation, and test automation — delivering reliable pipelines and QA frameworks for <strong>30+ enterprise clients</strong> on Snowflake.</p>
+      </div>
+
+      <!-- Core Skills -->
+      <div class="s-block">
+        <div class="s-head">Core Skills</div>
+        <div class="skill-chips">
+          <div class="skill-chip"><span class="chip-dot"></span>SQL &amp; Snowflake</div>
+          <div class="skill-chip"><span class="chip-dot"></span>dbt / Soda Core</div>
+          <div class="skill-chip"><span class="chip-dot"></span>Playwright Automation</div>
+          <div class="skill-chip"><span class="chip-dot"></span>ETL Testing &amp; Validation</div>
+          <div class="skill-chip"><span class="chip-dot"></span>Data Quality Frameworks</div>
+          <div class="skill-chip"><span class="chip-dot"></span>Root Cause Analysis</div>
+          <div class="skill-chip"><span class="chip-dot"></span>Requirement Analysis</div>
+          <div class="skill-chip"><span class="chip-dot"></span>Agile / Kanban</div>
+          <div class="skill-chip"><span class="chip-dot"></span>Regression &amp; UAT Testing</div>
+          <div class="skill-chip"><span class="chip-dot"></span>Shift-Left QA Strategy</div>
+        </div>
+      </div>
+
+      <!-- Tools -->
+      <div class="s-block">
+        <div class="s-head">Tools &amp; Platforms</div>
+        <div class="skill-chips">
+          <div class="skill-chip"><span class="chip-dot"></span>Snowflake</div>
+          <div class="skill-chip"><span class="chip-dot"></span>PostgreSQL / MySQL</div>
+          <div class="skill-chip"><span class="chip-dot"></span>SQL Server</div>
+          <div class="skill-chip"><span class="chip-dot"></span>Jira &amp; Git</div>
+        </div>
+      </div>
+
+      <!-- Languages -->
+      <div class="s-block">
+        <div class="s-head">Languages</div>
+        <div class="skill-chips">
+          <div class="skill-chip"><span class="chip-dot"></span>English — Fluent</div>
+          <div class="skill-chip"><span class="chip-dot"></span>Nepali — Native</div>
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div class="s-block">
+        <div class="s-head">Education</div>
+        <div class="edu-block">
+          <div class="edu-deg">B.E. Computer Engineering</div>
+          <div class="edu-uni">Tribhuvan University</div>
+          <div class="edu-loc">
+            <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Nepal
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /sidebar -->
+
+    <!-- MAIN -->
+    <div class="main">
+      <div class="m-section">
+        <div class="m-head">Professional Experience</div>
+
+        <!-- Leapfrog -->
+        <div class="job">
+          <div class="job-header-row">
+            <span class="job-co">Leapfrog Technology Inc</span>
+            <span class="job-dates">
+              <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              Nov 2021 – Present
+            </span>
+          </div>
+          <div class="job-role-row">
+            <span class="job-role">Lead Software Engineer</span>
+            <span class="job-badge job-badge-current">● Currently Here</span>
+            <span class="job-loc">
+              <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Kathmandu, Nepal
+            </span>
+          </div>
+
+          <div class="sub-label">Data &amp; Analytics QA</div>
+          <ul class="bullets">
+            <li>
+              <span class="b-dot"><svg width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span><span class="b-text">Spearheaded data onboarding and end-to-end validation for <b>30+ US retail clients</b>, ensuring schema-level consistency and high accuracy across Snowflake environments.</span>
+            </li>
+            <li>
+              <span class="b-dot"><svg width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span><span class="b-text">Architected comprehensive <b>SQL-based quality frameworks</b> — null checks, duplicate detection, reconciliation, and anomaly analysis — reducing data defect escape rates.</span>
+            </li>
+            <li>
+              <span class="b-dot"><svg width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span><span class="b-text">Built <b>automated dbt validation pipelines</b>, improving ETL reliability and eliminating repetitive manual checks across multi-layer pipelines.</span>
+            </li>
+            <li>
+              <span class="b-dot"><svg width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span><span class="b-text">Led <b>ETL testing and RCA</b> on data defects using SQL and pipeline tracing, cutting issue resolution time and improving client SLA adherence.</span>
+            </li>
+            <li>
+              <span class="b-dot"><svg width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span><span class="b-text">Served as <b>technical liaison</b> for client-reported issues — delivering clear root-cause explanations and resolutions to both technical and business stakeholders.</span>
+            </li>
+          </ul>
+
+          <div class="sub-label">Application &amp; Automation QA</div>
+          <ul class="bullets">
+            <li>
+              <span class="b-dot"><svg width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span><span class="b-text">Drove <b>shift-left quality</b> by contributing to UI and system design reviews, identifying testability risks early and reducing costly downstream defects.</span>
+            </li>
+            <li>
+              <span class="b-dot"><svg width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span><span class="b-text">Authored detailed <b>test plans, scenarios, and risk-based test cases</b> ensuring full coverage across functional and regression cycles.</span>
+            </li>
+            <li>
+              <span class="b-dot"><svg width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span><span class="b-text">Built and maintained a <b>Playwright automation framework</b>, boosting regression coverage and significantly reducing manual testing effort per release.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="job-divider"></div>
+
+        <!-- eXtensoData -->
+        <div class="job">
+          <div class="job-header-row">
+            <span class="job-co">eXtensoData</span>
+            <span class="job-dates">
+              <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              Aug 2018 – Nov 2021
+            </span>
+          </div>
+          <div class="job-role-row">
+            <span class="job-role">Senior Software Engineer</span>
+            <span class="job-badge job-badge-prev">3 yrs 3 mos</span>
+            <span class="job-loc">
+              <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Kathmandu, Nepal
+            </span>
+          </div>
+
+          <div class="sub-label">Data &amp; Application Testing</div>
+          <ul class="bullets">
+            <li>
+              <span class="b-dot"><svg width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span><span class="b-text">Validated <b>ETL mappings, transformations, and data standards</b> for Nepalese banking clients, improving cross-system compatibility and regulatory compliance.</span>
+            </li>
+            <li>
+              <span class="b-dot"><svg width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span><span class="b-text">Translated client functional specs into <b>detailed, traceable test cases</b>, driving improvements in test accuracy and end-to-end requirements coverage.</span>
+            </li>
+            <li>
+              <span class="b-dot"><svg width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span><span class="b-text">Executed comprehensive data and application testing cycles, identifying <b>logic gaps and integration failures</b> before production deployment.</span>
+            </li>
+            <li>
+              <span class="b-dot"><svg width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span><span class="b-text">Managed defect escalation end-to-end — documenting technical findings and coordinating timely resolutions with <b>cross-functional development teams</b>.</span>
+            </li>
+            <li>
+              <span class="b-dot"><svg width="7" height="7" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3.5"><polyline points="20 6 9 17 4 12"/></svg></span><span class="b-text">Established baseline <b>regression test suites</b> for recurring releases, reducing validation time for repeat deployments.</span>
+            </li>
+          </ul>
+        </div>
+
+      </div><!-- /m-section -->
+    </div><!-- /main -->
+
+  </div><!-- /body -->
+</div><!-- /page -->
+</body>
+</html>
